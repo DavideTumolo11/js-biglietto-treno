@@ -17,16 +17,49 @@ tools:
 - prompt
 - if, else 
 
-
+5
 */
 
-const price_ticket = 0.21;
-const user_underage = 
+const priceKm = 0.21;
+const DiscountUnder18 = 20;
+const DiscountOver65 = 40;
+let priceTicket;
 
-// chiedi all'utente quanti km vuole percorrere
 
 
-// chiedi all'utente quanti anni ha?
+const userKm = prompt('Quanti chilometri devi percorrere?');
 
-// moltiplica i km che vuole fare l'utente per 0,21 €
+    console.log(userKm);
+
+
+const userAge = prompt('Quanti anni hai?');
+
+    console.log(userAge);
+
+
+        
+
+        if (userAge < 18) {
+
+            priceTicket = userKm * priceKm * ((100 - DiscountUnder18) / 100);
+
+            document.getElementById('text').innerHTML = (`Il prezzo del biglietto è: ${priceTicket.toFixed(2)} €`) 
+
+        } else if (userAge > 65) {
+
+            priceTicket = userKm * priceKm * ((100 - DiscountOver65) / 100);
+            
+            document.getElementById('text').innerHTML = (`Il prezzo del biglietto è: ${priceTicket.toFixed(2)} €`)
+
+        } else {
+
+            priceTicket = userKm * priceKm;
+            
+            document.getElementById('text').innerHTML = (`Il prezzo del biglietto è: ${priceTicket.toFixed(2)} €`)
+
+        }
+
+        
+    
+
 
